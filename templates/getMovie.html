@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search A Movie</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/table.css">
+</head>
+<body>
+
+<h1 align="center" color="#4f6b72">Searching Results</h1>
+<form action="/index/" method="get">
+    <input type="submit" value="BACK"/>
+</form>
+
+<table id=info border="0">
+    <thead>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Target age group</th>
+    <th>IMDb</th>
+    <th>Rotten Tomatoes</th>
+    <th>Netflix</th>
+    <th>Hulu</th>
+    <th>Prime Video</th>
+    <th>Disney+</th>
+    <th>Directors</th>
+    <th>Genres</th>
+    <th>Country</th>
+    <th>Language</th>
+    <th>Runtime</th>
+    </thead>
+    <br>
+
+    {% for line in data %}
+        <tr>
+            <td algn="center">{{ line.title }}</td>
+            <td algn="center">{{ line.year }}</td>
+            <td algn="center">{{ line.age }}</td>
+            <td algn="center">{{ line.imdb }}</td>
+            <td algn="center">{{ line.rottenTomatoes }}</td>
+            <td algn="center">{{ line.netflix }}</td>
+            <td algn="center">{{ line.hulu }}</td>
+            <td algn="center">{{ line.primeVideo }}</td>
+            <td algn="center">{{ line.disney }}</td>
+            <td algn="center">{{ line.directors }}</td>
+            <td algn="center">{{ line.genres }}</td>
+            <td algn="center">{{ line.country }}</td>
+            <td algn="center">{{ line.language }}</td>
+            <td algn="center">{{ line.runtime }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
